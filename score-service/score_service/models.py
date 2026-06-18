@@ -29,3 +29,5 @@ class ScoreResponse(BaseModel):
     grade: str
     dimension_scores: DimensionScores
     computed_at: datetime
+
+    model_config = ConfigDict(extra="forbid")

@@ -8,7 +8,7 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "latest",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "nuxt": "^3.12.0",
     "vue": "^3.4.0"
   },

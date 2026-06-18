@@ -7,7 +7,23 @@ This repository contains a FastAPI score service and a Nuxt dashboard widget for
 ```bash
 cd score-service
 python -m venv .venv
-.venv\Scripts\Activate.ps1
+```
+
+### Windows PowerShell
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+### Install and run
+
+```bash
 python -m pip install -e ".[dev]"
 pytest
 uvicorn score_service.main:app --host 0.0.0.0 --port 8080
@@ -17,7 +33,6 @@ uvicorn score_service.main:app --host 0.0.0.0 --port 8080
 
 ```bash
 npm install
-$env:NUXT_SCORE_SERVICE_URL = "http://localhost:8080"
 npm run dev
 ```
 

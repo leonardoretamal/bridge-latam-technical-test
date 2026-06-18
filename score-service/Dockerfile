@@ -5,7 +5,6 @@ WORKDIR /build
 COPY pyproject.toml ./
 COPY score_service ./score_service
 
-
 RUN python -m pip install --upgrade pip \
     && python -m pip wheel --wheel-dir /wheels .
 
@@ -20,4 +19,7 @@ COPY --from=builder /wheels /wheels
 RUN python -m pip install --no-cache-dir /wheels/*.whl \
     && rm -rf /wheels
 
-CMD ["uvicorn", "score_service.main:app", "--host", "0.0.0.0", "--port", "8080"]
+RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+USER appuser
+
+CMD ["sh", "-c", "uvicorn score_service.main:app --host 0.0.0.0 --port ${SCORE_SERVICE_PORT:-8080}"]
