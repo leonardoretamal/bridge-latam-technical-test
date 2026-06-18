@@ -1,0 +1,15 @@
+node_modules/
+.nuxt/
+.output/
+.data/
+dist/
+
+score-service/.venv/
+score-service/.pytest_cache/
+score-service/.ruff_cache/
+score-service/**/__pycache__/
+score-service/**/*.pyc
+
+.env
+.env.*
+!.env.example
